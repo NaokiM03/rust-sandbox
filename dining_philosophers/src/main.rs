@@ -45,10 +45,10 @@ fn main() {
 
     let philosophers = vec![
         Philosopher::new("Judith Butler", 0, 1),
-        Philosopher::new("Gilles Deleuze", 1, 2),
+        Philosopher::new("Gilles Deleuze", 2, 1),
         Philosopher::new("Karl Marx", 2, 3),
-        Philosopher::new("Emma Goldman", 3, 4),
-        Philosopher::new("Michel Foucault", 0, 4),
+        Philosopher::new("Emma Goldman", 4, 3),
+        Philosopher::new("Michel Foucault", 4, 0),
     ];
 
     let handles: Vec<_> = philosophers.into_iter().map(|p| {
