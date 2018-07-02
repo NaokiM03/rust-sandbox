@@ -6,5 +6,5 @@ fn main() {
         let x = (i as f64 - 0.5) * w;
         s += 4.0 / (1.0 + x * x);
     }
-    print!("{}", s * w);
+    println!("{}", s * w);
 }
