@@ -10,6 +10,10 @@ impl Dollar {
     pub fn times (&self, multiplier: u32) -> Dollar {
         Dollar { amount: self.amount * multiplier }
     }
+
+    pub fn equals (&self, target: Dollar) -> bool {
+        self.amount == target.amount
+    }
 }
 
 #[cfg(test)]
@@ -23,4 +27,10 @@ mod tests {
         product = five.times(3);
         assert_eq!(15, product.amount);
     }
+    #[test]
+    fn test_equality() {
+        assert!(Dollar::new(5).equals(Dollar::new(5)));
+        assert!(!Dollar::new(5).equals(Dollar::new(6)));
+    }
+
 }
