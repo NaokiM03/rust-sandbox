@@ -3,6 +3,10 @@ pub struct Dollar {
     amount: u32
 }
 
+pub struct Franc {
+    amount: u32
+}
+
 impl Dollar {
     pub fn new(amount: u32) -> Dollar {
         Dollar { amount: amount }
@@ -14,10 +18,6 @@ impl Dollar {
     pub fn equals (&self, target: Dollar) -> bool {
         self.amount == target.amount
     }
-}
-
-pub struct Franc {
-    amount: u32
 }
 
 impl Franc {
