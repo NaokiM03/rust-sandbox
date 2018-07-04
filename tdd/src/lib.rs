@@ -44,18 +44,17 @@ mod tests {
         assert!(Dollar::new(15).equals(five.times(3)));
     }
     #[test]
+    fn test_franc_multiplication() {
+        let five = Franc::new(5);
+        assert!(Franc::new(10).equals(five.times(2)));
+        assert!(Franc::new(15).equals(five.times(3)));
+    }
+    #[test]
     fn test_equality() {
         assert!(Dollar::new(5).equals(Dollar::new(5)));
         assert!(!Dollar::new(5).equals(Dollar::new(6)));
         assert!(Franc::new(5).equals(Franc::new(5)));
         assert!(!Franc::new(5).equals(Franc::new(6)));
-
-    }
-    #[test]
-    fn test_franc_multiplication() {
-        let five = Franc::new(5);
-        assert!(Franc::new(10).equals(five.times(2)));
-        assert!(Franc::new(15).equals(five.times(3)));
     }
 
 }
