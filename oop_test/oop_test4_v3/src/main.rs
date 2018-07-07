@@ -1,8 +1,8 @@
 mod object;
 
-use object::object::ObjectLogic;
-use object::object::apple::Apple;
-use object::object::pen::Pen;
+use object::ObjectLogic;
+use object::apple::Apple;
+use object::pen::Pen;
 
 fn main() {
     let apple = Apple { size: 1 };

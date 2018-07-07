@@ -1,5 +1,5 @@
-use object::object::Object;
-use object::object::ObjectTrait;
+use object::Object;
+use object::ObjectTrait;
 
 pub struct Apple {
     pub size: u64,
