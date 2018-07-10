@@ -23,8 +23,45 @@ struct Car<BodyT, ChassisT, EngineT> {
     engine: EngineT,
 }
 
+struct Parking {
+    cars: Vec<Box<CarTrait>>,
+    // capacity_limit: u64,
+    current_capacity: u64,
+}
+
+
 trait CarTrait {
     fn get_info(&self) -> &str;
+}
+
+trait WagonCarTrait {
+    fn get_info(&self) -> &str;
+    fn fly(&self) -> &str;
+}
+
+trait ParkingTrait {
+    fn size(&self) -> usize;
+    fn get_current_capacity(&self) -> u64;
+    fn enter_simple(&mut self, car: Car<Body, Chassis, Engine>) -> ();
+    fn enter_wagon(&mut self, car: Car<WagonBody, WagonChassis, WagonEngine>) -> ();
+}
+
+
+impl ParkingTrait for Parking {
+    fn get_current_capacity(&self) -> u64 {
+        self.current_capacity
+    }
+    fn size(&self) -> usize {
+        self.cars.len()
+    }
+    fn enter_simple(&mut self, car: Car<Body, Chassis, Engine>) -> () {
+        self.cars.push(Box::new(car));
+        self.current_capacity += 1;
+    }
+    fn enter_wagon(&mut self, car: Car<WagonBody, WagonChassis, WagonEngine>) -> () {
+        self.cars.push(Box::new(car));
+        self.current_capacity += 2;
+    }
 }
 
 impl CarTrait for Car<Body, Chassis, Engine> {
@@ -62,7 +99,14 @@ fn main() {
         engine: WagonEngine {},
     };
     println!("{:?}", broken_car);
-    // println!("{}", broken_car.get_info());
-    //=> no method named `get_info`
 
+    let mut parking = Parking {
+        cars: Vec::new(),
+        // capacity_limit: 100,
+        current_capacity:0,
+    };
+    parking.enter_simple(car);
+    parking.enter_wagon(wagon_car);
+    println!("count: {}", parking.size());
+    println!("current_capacity: {}", parking.get_current_capacity());
 }
