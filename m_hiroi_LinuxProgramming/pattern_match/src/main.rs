@@ -30,4 +30,8 @@ fn main() {
         println!("{}", fibo(n));
     }
 
+    let ref x = 100;
+    match x {
+        y => println!("{}", y)
+    }
 }
