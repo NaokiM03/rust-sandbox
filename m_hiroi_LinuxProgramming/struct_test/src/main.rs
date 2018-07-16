@@ -21,4 +21,6 @@ fn main() {
         .. p1
     };
     println!("{},{},{}", p1.x, p1.y, p1.z);
+    println!("{},{},{}", p2.x, p2.y, p2.z);
+
 }
