@@ -4,11 +4,21 @@ struct Point3D {
     z: f64,
 }
 
+#[derive(Debug)]
+struct Point {
+    x: f64,
+    y: f64,
+}
+
 fn main() {
     let p1 = Point3D {
         x: 0.0,
         y: 1.0,
         z: 2.0
+    };
+    let p2 = Point3D {
+        y: 2.0,
+        .. p1
     };
     println!("{},{},{}", p1.x, p1.y, p1.z);
 }
