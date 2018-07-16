@@ -23,4 +23,6 @@ fn main() {
     println!("{},{},{}", p1.x, p1.y, p1.z);
     println!("{},{},{}", p2.x, p2.y, p2.z);
 
+    let Point {x: a, y: b} = Point {x: 1.0, y: 2.0};
+    println!("{:?}", Point{x: a, y: b});
 }
