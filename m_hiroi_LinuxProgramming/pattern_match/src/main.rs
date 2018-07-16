@@ -43,4 +43,11 @@ fn main() {
         y => println!("{}", y)
     }
 
+    let mut z = 200;
+    match z {
+        ref mut y => {
+            *y = 300;
+            println!("{}", y)
+        }
+    }
 }
