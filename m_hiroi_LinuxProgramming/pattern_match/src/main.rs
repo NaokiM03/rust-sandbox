@@ -11,6 +11,12 @@ fn fact_with_wild_card(n: i64) -> i64 {
     }
 }
 
+fn fibo(n: i64) -> i64 {
+    match n {
+        0 ... 1 => n,
+        _ => fibo(n - 1) + fibo(n - 2)
+    }
+}
 
 fn main() {
     for n in 10 .. 20 {
@@ -18,6 +24,10 @@ fn main() {
     }
     for n in 10 .. 20 {
         println!("{}", fact_with_wild_card(n));
+    }
+
+    for n in 30 .. 40 {
+        println!("{}", fibo(n));
     }
 
 }
