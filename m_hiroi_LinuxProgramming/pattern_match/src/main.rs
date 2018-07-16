@@ -34,4 +34,8 @@ fn main() {
     match x {
         y => println!("{}", y)
     }
+    let ref x = 100;
+    match x {
+        &y => println!("{}", y)
+    }
 }
