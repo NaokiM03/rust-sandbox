@@ -27,6 +27,10 @@ fn assoc(key: &str, data: &[(&str, i32)]) -> i32 {
     -1
 }
 
+fn foo(&(a, b): &(i32, i32)) {
+    println!("{},{}", a, b);
+}
+
 fn main() {
     for n in 10 .. 20 {
         println!("{}", fact(n));
@@ -66,4 +70,6 @@ fn main() {
     println!("{}", assoc("baz", &data));
     println!("{}", assoc("oops", &data));
 
+    let x = (1, 2);
+    foo(&x);
 }
