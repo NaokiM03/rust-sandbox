@@ -18,6 +18,15 @@ fn fibo(n: i64) -> i64 {
     }
 }
 
+fn assoc(key: &str, data: &[(&str, i32)]) -> i32 {
+    for &(x, v) in data {
+        if x == key {
+            return v;
+        }
+    }
+    -1
+}
+
 fn main() {
     for n in 10 .. 20 {
         println!("{}", fact(n));
@@ -50,4 +59,11 @@ fn main() {
             println!("{}", y)
         }
     }
+
+    let data = [("foo", 10), ("bar", 20), ("baz", 30)];
+    println!("{}", assoc("foo", &data));
+    println!("{}", assoc("bar", &data));
+    println!("{}", assoc("baz", &data));
+    println!("{}", assoc("oops", &data));
+
 }
