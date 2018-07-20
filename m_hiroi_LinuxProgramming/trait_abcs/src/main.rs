@@ -30,6 +30,15 @@ impl Point3D {
     }
 }
 
+impl Distance for Point3D {
+    fn distance(&self, p: &Point3D) -> f64 {
+        let dx = self.x - p.x;
+        let dy = self.y - p.y;
+        let dz = self.z - p.z;
+        (dx * dx + dy * dy + dz * dz).sqrt()
+    }
+}
+
 fn main() {
     println!("Hello, world!");
 }
