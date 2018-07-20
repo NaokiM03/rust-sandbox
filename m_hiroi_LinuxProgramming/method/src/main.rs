@@ -14,5 +14,9 @@ impl Point {
 }
 
 fn main() {
-    println!("Hello, world!");
+    let p1 = Point::new(0.0, 0.0);
+    let p2 = Point::new(10.0, 10.0);
+    let p3 = &p1;
+    println!("{}", p1.distance(&p2));
+    println!("{}", p3.distance(&p2));    
 }
