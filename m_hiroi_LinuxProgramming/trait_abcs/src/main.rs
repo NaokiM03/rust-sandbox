@@ -40,4 +40,7 @@ impl Distance for Point3D {
 }
 
 fn main() {
+    let p1 = Point::new(0.0, 0.0);
+    let p2 = Point::new(10.0, 10.0);
+    println!("{}", p1.distance(&p2));
 }
