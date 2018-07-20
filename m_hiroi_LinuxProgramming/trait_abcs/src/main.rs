@@ -24,6 +24,12 @@ struct Point3D {
     x: f64, y: f64, z: f64
 }
 
+impl Point3D {
+    fn new(x1: f64, y1: f64, z1: f64) -> Point3D {
+        Point3D { x: x1, y: y1, z: z1 }
+    }
+}
+
 fn main() {
     println!("Hello, world!");
 }
