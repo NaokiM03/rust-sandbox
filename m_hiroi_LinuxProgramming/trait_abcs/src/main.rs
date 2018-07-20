@@ -12,6 +12,14 @@ impl Point {
     }
 }
 
+impl Distance for Point {
+    fn distance(&self, p: &Point) -> f64 {
+        let dx = self.x - p.x;
+        let dy = self.y - p.y;
+        (dx * dx + dy * dy).sqrt()
+    }
+}
+
 fn main() {
     println!("Hello, world!");
 }
