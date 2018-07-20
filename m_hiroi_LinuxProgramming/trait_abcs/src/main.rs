@@ -40,5 +40,4 @@ impl Distance for Point3D {
 }
 
 fn main() {
-    println!("Hello, world!");
 }
