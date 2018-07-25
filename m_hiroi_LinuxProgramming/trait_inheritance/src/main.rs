@@ -22,4 +22,7 @@ impl Bar for Baz {
 
 
 fn main() {
+    let a = Baz;
+    a.method_a();
+    a.method_b();
 }
