@@ -8,5 +8,11 @@ trait Bar : Foo {
 
 struct Baz;
 
+impl Foo for Baz {
+    fn method_a(&self) {
+        println!("method_a!");
+    }
+}
+
 fn main() {
 }
