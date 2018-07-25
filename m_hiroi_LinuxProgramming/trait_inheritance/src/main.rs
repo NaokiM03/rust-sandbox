@@ -14,5 +14,12 @@ impl Foo for Baz {
     }
 }
 
+impl Bar for Baz {
+    fn method_b(&self) {
+        println!("method_b!");
+    }
+}
+
+
 fn main() {
 }
