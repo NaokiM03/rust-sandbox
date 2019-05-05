@@ -1,0 +1,9 @@
+[package]
+name = "colored"
+version = "0.1.0"
+authors = ["NaokiM03"]
+edition = "2018"
+
+[dependencies]
+colored = "1.8"
+rustyline = "3.0.0"
