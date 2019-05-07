@@ -1,0 +1,6 @@
+[package]
+name = "sand"
+version = "0.1.0"
+authors = ["NaokiM03 <mattsun.phone@gmail.com>"]
+
+[dependencies]
