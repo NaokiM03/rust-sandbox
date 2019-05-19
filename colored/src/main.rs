@@ -13,8 +13,16 @@ fn main() {
             Ok(line) => {
                 println!("Input: {}", line);
             }
+            Err(ReadlineError::Interrupted) => {
+                println!("Ctrl-C");
+                break;
+            }
+            Err(ReadlineError::Eof) => {
+                println!("Ctrl-D");
+                break;
+            }
             Err(err) => {
-                eprintln!("Error: {:?}", err);
+                println!("Error: {:?}", err);
                 break;
             }
         }
