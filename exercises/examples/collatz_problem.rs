@@ -19,3 +19,44 @@ fn collatz(n: u64) -> String {
 fn main() {
     println!("{}", collatz(1234567890));
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn collatz_sub_test() {
+        assert_eq!(collatz_sub(4), Some(2));
+        assert_eq!(collatz_sub(5), Some(16));
+    }
+
+    #[test]
+    fn collatz_test() {
+        let result_1 = "\
+6
+3
+10
+5
+16
+8
+4
+2
+1
+";
+        assert_eq!(collatz(6), result_1);
+
+        let result_2 = "\
+13
+40
+20
+10
+5
+16
+8
+4
+2
+1
+";
+        assert_eq!(collatz(13), result_2);
+    }
+}
