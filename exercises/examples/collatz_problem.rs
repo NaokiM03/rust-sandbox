@@ -8,6 +8,12 @@ fn collatz_sub(n: u64) -> Option<u64> {
     }
 }
 
+// fn collatz(n: u64) -> String {
+//     successors(Some(n), |x| collatz_sub(*x))
+//         .map(|x| x.to_string())
+//         .fold("".to_string(), |ret, x| ret + &x + "\n")
+// }
+
 fn collatz(n: u64) -> String {
     let mut ret = "".to_string();
     successors(Some(n), |x| collatz_sub(*x))
