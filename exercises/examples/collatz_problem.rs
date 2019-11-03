@@ -1,6 +1,6 @@
 use std::iter::successors;
 
-fn collatz(n: u64) -> Option<u64> {
+fn collatz_sub(n: u64) -> Option<u64> {
     match n {
         1 => None,
         _ if n % 2 == 0 => Some(n / 2),
@@ -8,7 +8,14 @@ fn collatz(n: u64) -> Option<u64> {
     }
 }
 
+fn collatz(n: u64) -> String {
+    let mut ret = "".to_string();
+    successors(Some(n), |x| collatz_sub(*x))
+        .map(|x| x.to_string() + "\n")
+        .for_each(|x| ret.push_str(&x));
+    ret
+}
+
 fn main() {
-    successors(Some(1234567890u64), |n| collatz(*n))
-        .for_each(|n| println!("{}", n));
+    println!("{}", collatz(1234567890));
 }
