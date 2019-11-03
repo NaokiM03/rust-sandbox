@@ -1,23 +1,14 @@
-fn collatz_sub(n: u64, mut ret: String) -> (u64, String) {
-    let num = match n % 2 {
-        0 => n / 2,
-        _ => n * 3 + 1,
-    };
-    let num_str = num.to_string() + "\n";
-    ret.push_str(&num_str);
-    if num == 1 {
-        (num, ret)
-    } else {
-        collatz_sub(num, ret)
+use std::iter::successors;
+
+fn collatz(n: u64) -> Option<u64> {
+    match n {
+        1 => None,
+        _ if n % 2 == 0 => Some(n / 2),
+        _ => Some(n * 3 + 1),
     }
 }
 
-fn collatz(n: u64) -> String {
-    let mut ret: String = "".to_owned();
-    let result = collatz_sub(n, ret);
-    result.1
-}
-
 fn main() {
-    println!("{}", collatz(1234567890));
+    successors(Some(1234567890u64), |n| collatz(*n))
+        .for_each(|n| println!("{}", n));
 }
