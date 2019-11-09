@@ -1,6 +1,5 @@
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    env_logger::init();
 
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("GET https://www.rust-lang.org/");
 
     let mut res = reqwest::get("https://www.rust-lang.org/")?;
